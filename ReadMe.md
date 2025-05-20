@@ -12,7 +12,7 @@
 * **Stage 1**: Autoregressive fine-tuning for alignment and initial instruction tuning.
 * **Stage 2**: Diffusion-based fine-tuning for enhanced instruction-following capabilities.
 
-Trained on the same dataset as LLaVA-NEXT, **Dimple-7B surpasses LLaVA-NEXT-7B by 3.9%**, demonstrating that diffusion-based multimodal language models can match its autoregressive counterparts under similar training budget.
+Trained on the same dataset as LLaVA-NEXT, **Dimple-7B surpasses LLaVA-NEXT-7B by 3.9%**, demonstrating that diffusion-based multimodal large language models can match its autoregressive counterparts under similar training budget.
 
 ---
 
