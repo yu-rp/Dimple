@@ -132,6 +132,11 @@ for j in range(len(messages)):
 
 ---
 
+## 📢 Community
+Feel free to join the Dimple Community for in-depth discussions and idea exchange!
+![cef5c275065254f3f5d2d9d7117d9f6](https://github.com/user-attachments/assets/f9ac2cb6-fffa-4df3-a780-a69efd086fcb)
+
+
 ## 📚 Citation
 
 > Citation information will be provided soon.
