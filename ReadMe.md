@@ -135,7 +135,7 @@ for j in range(len(messages)):
 ## 📢 Community
 Feel free to join the Dimple Community for in-depth discussions and idea exchange!
 <div align="center">
-<img src="https://github.com/user-attachments/assets/ab123b4f-3a39-43d9-b47f-893f1e4459a5" width="500"/>
+<img src="https://github.com/user-attachments/assets/ab123b4f-3a39-43d9-b47f-893f1e4459a5" width="256"/>
 </div>
 
 ## 📚 Citation
