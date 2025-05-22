@@ -132,6 +132,32 @@ for j in range(len(messages)):
 
 ---
 
+## 🏆 Evaluation
+
+We evaluate **Dimple** using [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval). The evaluation scripts are provided in the `lmms-eval` folder, and the evaluation commands for Dimple can be found at [`lmms-eval/examples/models/dimple.sh`](lmms-eval/examples/models/dimple.sh).
+
+To run the evaluation, follow these steps:
+
+1. **Install Dimple dependencies**
+   Make sure all required packages for Dimple are installed. Refer to Dimple’s environment setup instructions for details.
+
+2. **Install lmms-eval dependencies**
+   Next, install the necessary dependencies for `lmms-eval`. These are listed in the `lmms-eval` repository.
+
+3. **Set your `OPENAI_API_KEY`**
+   Some tasks require OpenAI API access. To do this, edit the file [`lmms-eval/examples/models/dimple.sh`](lmms-eval/examples/models/dimple.sh) and replace `OPENAI_API_KEY=MY_OPENAI_API_KEY` with your actual API key.
+
+Once all dependencies are installed and your API key is set, you can run the evaluation script directly:
+
+```bash
+sh lmms-eval/examples/models/dimple.sh
+```
+
+This will execute the evaluation pipeline for Dimple using the default configuration.
+
+
+---
+
 ## 📚 Citation
 
 > Citation information will be provided soon.
