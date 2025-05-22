@@ -1,7 +1,7 @@
 <img src="https://cdn-uploads.huggingface.co/production/uploads/635364b3c41f548fe39db945/T6ffjtAkFkI76QjXmN6iR.png" alt="Dimple" style="width:100%;"/>
 
 <p align="center">
-🤗 <a href="https://huggingface.co/rp-yu/Dimple-7B">Model</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/">Paper</a>&nbsp&nbsp
+🤗 <a href="https://huggingface.co/rp-yu/Dimple-7B">Model</a>&nbsp&nbsp | &nbsp&nbsp 💬 <a href="https://huggingface.co/spaces/rp-yu/Dimple-7B">Demo: Chat with Dimple</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/">Paper</a>&nbsp&nbsp | &nbsp&nbsp ✨ <a href="https://github.com/yu-rp/Dimple">Code</a>&nbsp&nbsp
 </p>
 
 # 💧 Dimple
@@ -12,7 +12,7 @@
 * **Stage 1**: Autoregressive fine-tuning for alignment and initial instruction tuning.
 * **Stage 2**: Diffusion-based fine-tuning for enhanced instruction-following capabilities.
 
-Trained on the same dataset as LLaVA-NEXT, **Dimple-7B surpasses LLaVA-NEXT-7B by 3.9%**, demonstrating that diffusion-based multimodal language models can match its autoregressive counterparts under similar training budget.
+Trained on the same dataset as LLaVA-NEXT, **Dimple-7B surpasses LLaVA-NEXT-7B by 3.9%**, demonstrating that diffusion-based multimodal large language models can match its autoregressive counterparts under similar training budget.
 
 ---
 
@@ -157,6 +157,11 @@ This will execute the evaluation pipeline for Dimple using the default configura
 
 
 ---
+## 📢 Community
+Feel free to join the Dimple Community for in-depth discussions and idea exchange!
+<div align="center">
+<img src="https://github.com/user-attachments/assets/ab123b4f-3a39-43d9-b47f-893f1e4459a5" width="256"/>
+</div>
 
 ## 📚 Citation
 
