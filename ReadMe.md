@@ -4,7 +4,8 @@
 🤗 <a href="https://huggingface.co/rp-yu/Dimple-7B">Model</a>&nbsp&nbsp | &nbsp&nbsp 💬 <a href="https://huggingface.co/spaces/rp-yu/Dimple-7B">Demo: Chat with Dimple</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/2505.16990">Paper</a>&nbsp&nbsp | &nbsp&nbsp ✨ <a href="https://github.com/yu-rp/Dimple">Code</a>&nbsp&nbsp
 </p>
 
-![video3](https://github.com/user-attachments/assets/b3beebe0-f5f4-4282-98a6-10aeaa96abed)
+![video3](https://github.com/user-attachments/assets/76d9cb59-ad1e-48cf-8ae0-9735146cac31)
+
 
 # 💧 Dimple
 
