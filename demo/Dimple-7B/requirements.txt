@@ -1,0 +1,8 @@
+pip==25.1
+transformers==4.46.2
+torch==2.5.1
+torchvision==0.20.1
+accelerate==1.6.0
+gradio
+huggingface-hub
+requests

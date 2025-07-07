@@ -157,6 +157,22 @@ This will execute the evaluation pipeline for Dimple using the default configura
 
 
 ---
+
+## 💪 Training
+
+The training code is provided in `training-code`. Before using the code, you should also prepare your training data and set up the base model.
+
+- Training Data: Please follow the instruction in LLaVA-Next to prepare the data for alignment and instruction tuning.
+- Base Model: The LLM is initialized with [Dream-org/Dream-v0-Instruct-7B](https://huggingface.co/Dream-org/Dream-v0-Instruct-7B). The vision encoder is initialized with [Qwen/Qwen2-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct). You may use the code in `training-code/init.py` to set up the base model.
+
+
+---
+
+## 💬 Local Demo
+
+We can no longer afford to host the Hugging Face online demo. However, the code to run our demo is available in the `demo` directory, allowing you to run it locally and experience Dimple.
+
+---
 ## 📢 Community
 Feel free to join the Dimple Community for in-depth discussions and idea exchange!
 <div align="center">
