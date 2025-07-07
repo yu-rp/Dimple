@@ -1,8 +1,11 @@
 <img src="https://cdn-uploads.huggingface.co/production/uploads/635364b3c41f548fe39db945/T6ffjtAkFkI76QjXmN6iR.png" alt="Dimple" style="width:100%;"/>
 
 <p align="center">
-🤗 <a href="https://huggingface.co/rp-yu/Dimple-7B">Model</a>&nbsp&nbsp | &nbsp&nbsp 💬 <a href="https://huggingface.co/spaces/rp-yu/Dimple-7B">Demo: Chat with Dimple</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/">Paper</a>&nbsp&nbsp | &nbsp&nbsp ✨ <a href="https://github.com/yu-rp/Dimple">Code</a>&nbsp&nbsp
+🤗 <a href="https://huggingface.co/rp-yu/Dimple-7B">Model</a>&nbsp&nbsp | &nbsp&nbsp 💬 <a href="https://huggingface.co/spaces/rp-yu/Dimple-7B">Demo: Chat with Dimple</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/abs/2505.16990">Paper</a>&nbsp&nbsp | &nbsp&nbsp ✨ <a href="https://github.com/yu-rp/Dimple">Code</a>&nbsp&nbsp
 </p>
+
+![video3](https://github.com/user-attachments/assets/76d9cb59-ad1e-48cf-8ae0-9735146cac31)
+
 
 # 💧 Dimple
 
@@ -181,5 +184,14 @@ Feel free to join the Dimple Community for in-depth discussions and idea exchang
 
 ## 📚 Citation
 
-> Citation information will be provided soon.
-> Please stay tuned if you are interested in citing **Dimple** in your work.
+```
+@misc{dimple,
+      title={Dimple: Discrete Diffusion Multimodal Large Language Model with Parallel Decoding}, 
+      author={Runpeng Yu and Xinyin Ma and Xinchao Wang},
+      year={2025},
+      eprint={2505.16990},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.16990}, 
+}
+```
