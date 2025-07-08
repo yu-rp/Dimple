@@ -176,11 +176,6 @@ The training code is provided in `training-code`. Before using the code, you sho
 We can no longer afford to host the Hugging Face online demo. However, the code to run our demo is available in the `demo` directory, allowing you to run it locally and experience Dimple.
 
 ---
-## 📢 Community
-Feel free to join the Dimple Community for in-depth discussions and idea exchange!
-<div align="center">
-<img src="https://github.com/user-attachments/assets/ab123b4f-3a39-43d9-b47f-893f1e4459a5" width="256"/>
-</div>
 
 ## 📚 Citation
 
