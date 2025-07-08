@@ -161,7 +161,6 @@ class DimpleGenerationConfig(GenerationConfig):
         self.use_original_confidence: Optional[bool] = kwargs.pop("use_original_confidence", True) 
         # dim or dream. the original dream decoding pipeline might be problematic for some cases.
         self.decoding_pipeline: Optional[str] = kwargs.pop("decoding_pipeline", "dim") 
-        self.block_attention: Optional[bool] = kwargs.pop("block_attention", False)
 
         # Parameters that define the output variables of `generate`
         self.num_return_sequences: int = kwargs.pop("num_return_sequences", 1)
@@ -527,12 +526,7 @@ class DimpleGenerationMixin:
         model_kwargs["total_sequence_length"] = input_ids.shape[1]
         logger.debug(
             f"Set total sequence length to {model_kwargs['total_sequence_length']}."
-        )
-
-        # 8. set block attention
-        block_attention = generation_config.block_attention
-        if block_attention:
-            model_kwargs["attention_mask_4d"] = self.gen_4d_attention_mask_with_block_attention(model_kwargs)                
+        )            
 
         # 9. initialize cache position
         if model_kwargs["use_cache"]:
@@ -545,7 +539,6 @@ class DimpleGenerationMixin:
             logger.debug(
                 f"The cache position is initialized with {model_kwargs['cache_position']}."
             )
-        # print(f"pipeline: {generation_config.decoding_pipeline},use cache: {model_kwargs['use_cache']}, block attention: {block_attention}, use original confidence: {generation_config.use_original_confidence}, alg: {generation_config.alg}, alg_temp: {generation_config.alg_temp}, alg_p_threshold: {generation_config.alg_p_threshold}")
         # 10. Generate
         result = self._sample(
             input_ids,

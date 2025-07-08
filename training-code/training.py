@@ -133,7 +133,6 @@ if __name__ == "__main__":
         raise ValueError("shuffle_training_data should be yes or no")
 
     if args.causal_attention == "yes":
-        assert not args.block_attention, "Block attention and causal attention cannot be used at the same time"
         args.causal_attention = True
         logger.info("Use causal attention")
     elif args.causal_attention == "no":
@@ -166,58 +165,58 @@ if __name__ == "__main__":
     logger.info(json.dumps(vars(args), indent = 2))
 
     if args.model == 'Dimple-ar-instruct':
-        model = DiM15Model.from_pretrained("/folder/to/the/model/after/ar-instruction-tuning", torch_dtype=torch.bfloat16)
+        model = DimpleModel.from_pretrained("/folder/to/the/model/after/ar-instruction-tuning", torch_dtype=torch.bfloat16)
         if args.causal_attention:
             model.config.full_attn_mask = False
         else:
             model.config.full_attn_mask = True
-        tokenizer = DiM15Tokenizer.from_pretrained("/folder/to/the/model/after/ar-instruction-tuning", padding_side="right")
-        img_processor = DiM15ImageProcessor.from_pretrained("/folder/to/the/model/after/ar-instruction-tuning")
+        tokenizer = DimpleTokenizer.from_pretrained("/folder/to/the/model/after/ar-instruction-tuning", padding_side="right")
+        img_processor = DimpleImageProcessor.from_pretrained("/folder/to/the/model/after/ar-instruction-tuning")
         if args.max_pixel_scale > 0:
             img_processor.max_pixels = (14*args.max_pixel_scale) ** 2
             img_processor.size["max_pixels"] = (14*args.max_pixel_scale) ** 2
             logger.info(f"Using max pixel value: {img_processor.max_pixels}={math.sqrt(img_processor.max_pixels)}")
         else:
             logger.info("Using original max pixel value")
-        processor = DiM15Processor(
+        processor = DimpleProcessor(
             image_processor=img_processor, 
             tokenizer=tokenizer, 
             chat_template=tokenizer.chat_template,
         )
     elif args.model == 'Dimple-align':
-        model = DiM15Model.from_pretrained("/folder/to/the/model/after/alignment", torch_dtype=torch.bfloat16)
+        model = DimpleModel.from_pretrained("/folder/to/the/model/after/alignment", torch_dtype=torch.bfloat16)
         if args.causal_attention:
             model.config.full_attn_mask = False
         else:
             model.config.full_attn_mask = True
-        tokenizer = DiM15Tokenizer.from_pretrained("/folder/to/the/model/after/alignment", padding_side="right")
-        img_processor = DiM15ImageProcessor.from_pretrained("/folder/to/the/model/after/alignment")
+        tokenizer = DimpleTokenizer.from_pretrained("/folder/to/the/model/after/alignment", padding_side="right")
+        img_processor = DimpleImageProcessor.from_pretrained("/folder/to/the/model/after/alignment")
         if args.max_pixel_scale > 0:
             img_processor.max_pixels = (14*args.max_pixel_scale) ** 2
             img_processor.size["max_pixels"] = (14*args.max_pixel_scale) ** 2
             logger.info(f"Using max pixel value: {img_processor.max_pixels}={math.sqrt(img_processor.max_pixels)}")
         else:
             logger.info("Using original max pixel value")
-        processor = DiM15Processor(
+        processor = DimpleProcessor(
             image_processor=img_processor, 
             tokenizer=tokenizer, 
             chat_template=tokenizer.chat_template,
         )
     elif args.model == 'Dimple-raw':
-        model = DiM15Model.from_pretrained("/folder/to/the/raw/model", torch_dtype=torch.bfloat16)
+        model = DimpleModel.from_pretrained("/folder/to/the/raw/model", torch_dtype=torch.bfloat16)
         if args.causal_attention:
             model.config.full_attn_mask = False
         else:
             model.config.full_attn_mask = True
-        tokenizer = DiM15Tokenizer.from_pretrained("/folder/to/the/raw/model", padding_side="right")
-        img_processor = DiM15ImageProcessor.from_pretrained("/folder/to/the/raw/model")
+        tokenizer = DimpleTokenizer.from_pretrained("/folder/to/the/raw/model", padding_side="right")
+        img_processor = DimpleImageProcessor.from_pretrained("/folder/to/the/raw/model")
         if args.max_pixel_scale > 0:
             img_processor.max_pixels = (14*args.max_pixel_scale) ** 2
             img_processor.size["max_pixels"] = (14*args.max_pixel_scale) ** 2
             logger.info(f"Using max pixel value: {img_processor.max_pixels}={math.sqrt(img_processor.max_pixels)}")
         else:
             logger.info("Using original max pixel value")
-        processor = DiM15Processor(
+        processor = DimpleProcessor(
             image_processor=img_processor, 
             tokenizer=tokenizer, 
             chat_template=tokenizer.chat_template,
@@ -294,7 +293,6 @@ if __name__ == "__main__":
         answer_padding_strategy = args.answer_padding_strategy,
         max_seq_length = args.max_seq_length,
         only_text = args.only_text,
-        skip_order_token = args.skip_order_token,
         )
 
     # The processed dataset will contain the following keys:
@@ -312,8 +310,6 @@ if __name__ == "__main__":
         tokenizer=tokenizer, 
         image_processor=img_processor,
         position_ids_function=model.get_rope_index,
-        block_attention = args.block_attention,
-        order_token = args.order_token,
     )
 
     training_args = TrainingArguments(
@@ -362,8 +358,6 @@ if __name__ == "__main__":
             seq_length=args.max_seq_length,
             loss_rescale=1/args.gradient_accumulation_steps if args.rescale_loss else 1,
             mask_strategy=args.mask_strategy,
-            order_token=args.order_token,
-            order_token_weight_function = args.order_token_weight_function,
             linear_clamp_shift = args.linear_clamp_shift,
             linear_clamp_max = args.linear_clamp_max,
             linear_clamp_min = args.linear_clamp_min,

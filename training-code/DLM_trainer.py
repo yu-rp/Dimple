@@ -70,8 +70,6 @@ class DLMTrainer(Trainer):
         inputs["mask_locations"] = self.repeat_tensor_independent(inputs["mask_locations"], repeats = 2, dim=0)
         inputs["position_ids"] = self.repeat_tensor_independent(inputs["position_ids"], repeats = 2, dim=1)
         inputs["rope_deltas"] = self.repeat_tensor_independent(inputs["rope_deltas"], repeats = 2, dim=0)
-        if inputs.get("order_token", None) is not None:
-            inputs["order_token"] = self.repeat_tensor_independent(inputs["order_token"], repeats = 2, dim=0)
 
         inputs["input_ids"] = torch.where(move_indices, mask_token_id, inputs["input_ids"])
 

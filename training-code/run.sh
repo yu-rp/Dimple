@@ -7,7 +7,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch  --main_process_port 28100 traini
     --causal_attention yes \
     --max-pixel-scale 24 \
     --dataset llava_alignment \
-    --block-attention no \
     --learning-rate 1e-3 \
     --batch-size 256 \
     --warm_up 0.03 \
@@ -31,7 +30,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch --use_deepspeed --deepspeed_confi
     --causal_attention yes \
     --max-pixel-scale 24 \
     --dataset llava_next \
-    --block-attention no \
     --learning-rate 2e-5 \
     --batch-size 128 \
     --warm_up 0.03 \
@@ -55,7 +53,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch --use_deepspeed --deepspeed_confi
     --causal_attention no \
     --max-pixel-scale 24 \
     --dataset llava_next \
-    --block-attention yes \
     --learning-rate 5e-6 \
     --max-grad-norm 0.01 \
     --batch-size 128 \

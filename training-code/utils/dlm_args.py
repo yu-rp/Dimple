@@ -40,33 +40,3 @@ class DLMTrainingArguments:
             "help": "Whether the MLLM shift the labels"
         },
     )
-    order_token: Optional[bool] = field(
-        default=False,
-        metadata={
-            "help": "Whether the MLLM use order token"
-        },
-    )
-    order_token_weight_function: Optional[str] = field(
-        default="linear",
-        metadata={
-            "help": "Order token weight for the model"
-        },
-    )
-    linear_clamp_shift: Optional[float] = field(
-        default=0.8,
-        metadata={
-            "help": "Clamp shift used in the linear order token weight function"
-        },
-    )
-    linear_clamp_max: Optional[float] = field(
-        default=2.0,
-        metadata={
-            "help": "Clamp max used in the linear order token weight function"
-        },
-    )
-    linear_clamp_min: Optional[float] = field(
-        default=0.0,
-        metadata={
-            "help": "Clamp min used in the linear order token weight function"
-        },
-    )
