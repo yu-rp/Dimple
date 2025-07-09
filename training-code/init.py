@@ -2,7 +2,7 @@ import sys
 import json
 import torch
 from transformers import AutoTokenizer
-qwen_tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2-VL-7B-Instruct")
+qwen_tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
 dimple_chat_template = qwen_tokenizer.chat_template
 
 from models.tokenization_dimple import DimpleTokenizer
@@ -21,7 +21,7 @@ dimple_tokenizer.add_special_tokens(special_tokens_dict = {
 
 from models.image_processing_dimple import DimpleImageProcessor
 DimpleImageProcessor.register_for_auto_class("AutoImageProcessor")
-dimple_image_processor = DimpleImageProcessor.from_pretrained("Qwen/Qwen2-VL-7B-Instruct")
+dimple_image_processor = DimpleImageProcessor.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
 
 from models.processing_dimple import DimpleProcessor
 DimpleProcessor.register_for_auto_class("AutoProcessor")
@@ -41,7 +41,7 @@ DimpleVisionConfig.register_for_auto_class("AutoConfig")
 from transformers import AutoModel
 
 # First load the model to access its visual config directly
-qwen_model = AutoModel.from_pretrained("Qwen/Qwen2-VL-7B-Instruct", trust_remote_code=True)
+qwen_model = AutoModel.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct", trust_remote_code=True)
 qwen_vision_config = qwen_model.visual.config
 dimple_vision_config = DimpleVisionConfig(**qwen_vision_config.to_dict())
 DimpleConfig.register_for_auto_class("AutoConfig")
