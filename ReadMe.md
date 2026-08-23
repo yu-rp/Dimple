@@ -180,13 +180,11 @@ We can no longer afford to host the Hugging Face online demo. However, the code 
 ## 📚 Citation
 
 ```
-@misc{dimple,
+@inproceedings{dimple,
       title={Dimple: Discrete Diffusion Multimodal Large Language Model with Parallel Decoding}, 
       author={Runpeng Yu and Xinyin Ma and Xinchao Wang},
-      year={2025},
-      eprint={2505.16990},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.16990}, 
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    year = "2026",
+    publisher = "Association for Computational Linguistics",
 }
 ```
